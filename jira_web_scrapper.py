@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import os
-import sys
 
 
 def get_jira_url():
@@ -26,7 +25,10 @@ def get(url, **kwargs):
 
 
 def main():
-    print(get_task_description(sys.argv[1]))
+    # print(get_task_description(sys.argv[1]))
+    task_id = 'CPM-182'
+    page = get_page_soup(task_id)
+    print(page.text)
 
 
 if __name__ == '__main__':
